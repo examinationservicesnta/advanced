@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE (Advanced) 2025 - Registration Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #006747;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h1, h2, h3 {
+            color: #006747;
+        }
+        .form-section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .date-group {
+            display: flex;
+            gap: 10px;
+        }
+        .date-group select {
+            flex: 1;
+        }
+        .btn {
+            background-color: #006747;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 20px auto;
+        }
+        .btn:hover {
+            background-color: #005a3c;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>JEE (Advanced) 2025</h1>
+        <h2>Registration Form</h2>
+    </div>
+
+    <form id="registrationForm">
+        <div class="form-section">
+            <h2>Step 1: Basic Information</h2>
+            
+            <div class="form-group">
+                <label>Class XII (Equivalent/Qualifying Exam) Passed from:</label>
+                <select>
+                    <option value="india">India</option>
+                    <option value="outside">Outside India</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Year of first appearance in class XII (or equivalent) exam:</label>
+                <input type="number" value="2024" min="2000" max="2025">
+            </div>
+            
+            <div class="form-group">
+                <label>Year of first attempt in JEE (Advanced):</label>
+                <input type="number" value="2024" min="2000" max="2025">
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Step 2: Special Categories</h2>
+            
+            <div class="form-group">
+                <label>Are you child of defence/paramilitary personnel killed or permanently disabled in action during war or peacetime operations?</label>
+                <select>
+                    <option value="">--Select--</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Do you have Color Blindness?</label>
+                <select>
+                    <option value="">--Select--</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Do you have one Eyed Vision?</label>
+                <select>
+                    <option value="">--Select--</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Are you a PhD Candidate?</label>
+                <select>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Do you have disability and having difficulty in writing? (For persons having less than 40% disability)</label>
+                <select>
+                    <option value="">--Select--</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Step 3: OBC-NCL (Central List) Details</h2>
+            
+            <div class="form-group">
+                <label>Do you have valid OBC-NCL certificate issued on or after April 1, 2025?</label>
+                <select id="obcNclSelect">
+                    <option value="">--Select--</option>
+                    <option value="yes">Yes, I have OBC-NCL certificate issued on or after April 1, 2025</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <div id="obcNclDetails" class="hidden">
+                <div class="form-group">
+                    <label>OBC-NCL Certificate Issue Date:</label>
+                    <div class="date-group">
+                        <select>
+                            <option value="">Day</option>
+                            <!-- Days 1-31 -->
+                            <script>
+                                for(let i=1; i<=31; i++) {
+                                    document.write(`<option value="${i}">${i}</option>`);
+                                }
+                            </script>
+                        </select>
+                        <select>
+                            <option value="">Month</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <select>
+                            <option value="">Year</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>State/UT in National Commission for Backward Classes list:</label>
+                    <select>
+                        <option value="">--Select--</option>
+                        <option value="maharashtra">Maharashtra</option>
+                        <!-- Add other states as needed -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Choose OBC-NCL Caste/Community:</label>
+                    <select>
+                        <option value="">--Select--</option>
+                        <!-- Add caste/community options here -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Entry No. of OBC-NCL Caste/Community:</label>
+                    <input type="text" placeholder="Enter entry number">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Step 4: WhatsApp Contact Details</h2>
+            
+            <div class="form-group">
+                <label>JEE (Main) 2025 Registered Mobile Number:</label>
+                <input type="text" readonly value="As registered in JEE Main">
+            </div>
+            
+            <div class="form-group">
+                <label>Are you using WhatsApp on above number?</label>
+                <select>
+                    <option value="">--Select--</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Step 5: Choice of Exam City</h2>
+            
+            <div class="form-group">
+                <label>First Choice of Exam City:</label>
+                <select>
+                    <option value="">--Select--</option>
+                    <option value="ahmednagar">Ahmednagar</option>
+                    <option value="akola">Akola</option>
+                    <option value="amravati">Amravati</option>
+                    <option value="aurangabad">Aurangabad</option>
+                    <option value="beed">Beed</option>
+                    <option value="bhandara">Bhandara</option>
+                    <option value="buldhana">Buldhana</option>
+                    <option value="chandrapur">Chandrapur</option>
+                    <option value="dhule">Dhule</option>
+                    <option value="gadchiroli">Gadchiroli</option>
+                    <option value="gondia">Gondia</option>
+                    <option value="jalgaon">Jalgaon</option>
+                    <option value="jalna">Jalna</option>
+                    <option value="kolhapur">Kolhapur</option>
+                    <option value="latur">Latur</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="nagpur">Nagpur</option>
+                    <option value="nanded">Nanded</option>
+                    <option value="nandurbar">Nandurbar</option>
+                    <option value="nashik">Nashik</option>
+                    <option value="osmanabad">Osmanabad</option>
+                    <option value="parbhani">Parbhani</option>
+                    <option value="pune">Pune</option>
+                    <option value="raigad">Raigad</option>
+                    <option value="ratnagiri">Ratnagiri</option>
+                    <option value="sangli">Sangli</option>
+                    <option value="satara">Satara</option>
+                    <option value="sindhudurg">Sindhudurg</option>
+                    <option value="solapur">Solapur</option>
+                    <option value="thane">Thane</option>
+                    <option value="wardha">Wardha</option>
+                    <option value="washim">Washim</option>
+                    <option value="yavatmal">Yavatmal</option>
+                </select>
+            </div>
+            
+            <!-- Repeat for 4 more choices (total 5 choices) -->
+            <div class="form-group">
+                <label>Second Choice of Exam City:</label>
+                <select>
+                    <option value="">--Select--</option>
+                    <!-- Same options as above -->
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Third Choice of Exam City:</label>
+                <select>
+                    <option value="">--Select--</option>
+                    <!-- Same options as above -->
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Fourth Choice of Exam City:</label>
+                <select>
+                    <option value="">--Select--</option>
+                    <!-- Same options as above -->
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Fifth Choice of Exam City:</label>
+                <select>
+                    <option value="">--Select--</option>
+                    <!-- Same options as above -->
+                </select>
+            </div>
+        </div>
+
+        <button type="submit" class="btn">Submit Registration</button>
+    </form>
+
+    <script>
+        // Show/hide OBC-NCL details based on selection
+        document.getElementById('obcNclSelect').addEventListener('change', function() {
+            const obcDetails = document.getElementById('obcNclDetails');
+            obcDetails.classList.toggle('hidden', this.value !== 'yes');
+        });
+
+        // Form submission handler
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            window.location.href = 'h3.html'; // Redirect to Upload Documents page

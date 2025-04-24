@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE (Advanced) 2025 - Registration Portal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #006747;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h1, h2, h3 {
+            color: #006747;
+        }
+        .note-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #006747;
+            padding: 10px 15px;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .login-form {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .btn {
+            background-color: #006747;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>JEE (Advanced) 2025</h1>
+        <h2>Online Registration Portal</h2>
+    </div>
+
+    <nav>
+        <strong>Home</strong> | 
+        Instructions for Registration | 
+        Important Dates | 
+        Information Brochure | 
+        Certificate Formats | 
+        Password Policy | 
+        Eligibility Criteria | 
+        Contact Us
+    </nav>
+
+    <section>
+        <h3>Direct Registration Candidates</h3>
+        <ul>
+            <li>Foreign national candidates.</li>
+            <li>Candidate whose CC(VPIO) card was first issued subsequent to 4th March, 2021.</li>
+            <li>Candidate whose CC(VPIO) card was first issued before 4th March, 2021 and wish to be considered as foreign national.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Direct registration for Foreign National and CC(VPIO (ii) Candidates</h3>
+    </section>
+
+    <div class="note-box">
+        <strong>Note:</strong> After successful registration, anyone can pay the registration fee on behalf of candidate by using his/her JEE (Main) 2025 Application Number (for Direct Registered Candidates) and Date of Birth. No need to use login credentials.
+        <div style="margin-top: 10px;">
+            <button class="btn">Pay Registration Fee</button>
+        </div>
+    </div>
+
+    <section>
+        <h3>Important Dates</h3>
+        <table>
+            <tr>
+                <th>Activity</th>
+                <th>Day, Date and Time (IST)</th>
+            </tr>
+            <tr>
+                <td>Direct Online Registration begins for CC(VPIO) and Foreign Candidates</td>
+                <td>Monday, April 07, 2025 (10:00 IST)</td>
+            </tr>
+        </table>
+    </section>
+
+    <div class="login-form">
+        <h3>Registered Candidates Sign In</h3>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="appNumber">JEE (Main) 2025 Application Number:</label>
+                <input type="text" id="appNumber" placeholder="Enter application number">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter password">
+            </div>
+            <div class="form-group">
+                <label for="securityPin">Security Pin:</label>
+                <input type="text" id="securityPin" placeholder="Enter security pin">
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </div>
+
+    <div class="note-box">
+        <ul>
+            <li>Confidentiality of password is sole responsibility of the candidate and all care must be taken to protect the password.</li>
+            <li>For security reasons, after initiating your work, kindly click the LOGOUT button and close all the windows related to your address.</li>
+            <li>Candidates are advised to keep changing the password at frequent intervals.</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Indian Institute of Technology Kanpur. For official use only.</p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            window.location.href = 'next.html';
+        });
+    </script>
+</body>
+</html>
